@@ -1,134 +1,249 @@
+Linux|Windows|Coverage
+-----|-------|--------
+TBD|[![Build status](https://ci.appveyor.com/api/projects/status/qcm23727dm8dplk5/branch/master?svg=true)](https://ci.appveyor.com/project/felix-b/nwheels-bk3vs/branch/master)|[![codecov](https://codecov.io/gh/felix-b/NWheels/branch/master/graph/badge.svg)](https://codecov.io/gh/felix-b/NWheels/branch/master)
+
 Welcome to NWheels
 =======
 
-[![Build status](https://ci.appveyor.com/api/projects/status/qcm23727dm8dplk5/branch/master?svg=true)](https://ci.appveyor.com/project/felix-b/nwheels-bk3vs/branch/master)
+<img align="left" src="Docs/Images/logo-132.png"/>
 
-According to our observations, commonality in the needs of enterprise application projects is significantly higher than variability. We take this as an opportunity to slash project costs and timeframes, improve software quality, and reduce technical risks. 
+From our experience, commonality in the needs of enterprise application projects is significantly higher than variability. 
 
-Learn more: [Vision, Metaphor, Ecosystem](https://github.com/felix-b/NWheels/wiki/background-vision-metaphor-ecosystem), [Optimization opportunities](https://github.com/felix-b/NWheels/wiki/background-optimization-opportunities)
+Based on that, we aim to let flexibly designed, performant, feature-rich software systems be built at significantly lower costs, within significantly shorter timeframes. 
 
-## What is NWheels
+<br/>
 
-NWheels is an infrastructural ecosystem and ongoing development effort, which is aimed to implement A-to-Z architectural recipes, supply innovative runtime platform, and provide super-high-productivity framework for development of enterprise applications based on the [.NET Core platform](https://docs.microsoft.com/en-us/dotnet/articles/core/).
+# How It Works
 
-- **What is the problem NWheels solves that makes it an attractive choice for a project?** There are many. Through our experience, we identified a set of typical interrelated challenges and tasks that recur in enterprise software development. NWheels follows field-proven approaches to those, and provides a flexibly structured solution, which is easily adaptable to specific project requirements. [Learn more: optimization opportunities](https://github.com/felix-b/NWheels/wiki/background-optimization-opportunities).
+<img align="right" src="Docs/Images/nwheels-concept-thumb.png"/>
 
-- **What types of applications will be supported?** Web sites, web services, application tiers implemented as micro-services or FaaS; native mobile and desktop apps; CLI programs; data stored in relational, No-SQL, and event-oriented databases. Typical enterprise application includes most of the above. [Learn more: architecture overview](https://github.com/felix-b/NWheels/wiki/architecture-high-level-overview).
+## What vs. How is half the key
 
-- **Where will they run?** Server-side will run on Linux, Windows, macOS; the client side will run as HTML5 apps on web browsers, as native apps on mobile devices, as desktop apps on Windows/Linux/macOS; the client side will also run on less common platforms like Smart TV and IVR.
+We eliminate manual coding and maintenance of mechanically repetitive parts throughout the stack (UI, RESTful API, DB, including fine-grained access control and deployment images, to name just a few). 
 
-- **Clouds?** Yes, any compatible IaaS will be supported. NWheels comes with its own runtime platform, and unless explicitly specified, no dependencies on concrete vendor PaaS will be included. Thus for example, mission-critical software will be able to run on Azure with disaster recovery on AWS and Google Cloud. [Learn more: architecture overview](https://github.com/felix-b/NWheels/wiki/architecture-high-level-overview).
+These are derived from application models enriched with _what_ as opposed to _how_. The rich models allow deriving sensible implementations with minimal effort (the 80/20 law, and we want 90/10).
 
-- **High-end SLA?** Yes, high availability and fault tolerance, elastic scalability, low-latency, high-throughput applications running on clouds are our focus.
+Yet, NWheels won't stand on your way when creativity and uniqueness are desired. Manual control can easily be taken at any level.
 
-Learn more: [Feature highlighs](#feature-highlights) below, [Doing one thing well](https://github.com/felix-b/NWheels/wiki/architecture-doing-one-thing-well), [Architecture overview](https://github.com/felix-b/NWheels/wiki/architecture-high-level-overview) in Wiki 
+## Share & Reuse is the second half 
 
-## License
+We provide an API medium and foundation for creating, sharing, and reusing pluggable building blocks. These scale from solving small recurring problems, to implementing feature-rich subsystems in common business and infrastructural domains (examples are _CMS_; _CRM_; _Shopping cart_; _Stock exchange_; _SaaS & customizations_; _Application security_; _i18n_ - to name just a few). 
 
-NWheels is available under the **MIT license**, and is aimed to stay **free forever**.
+The core of NWheels is built itself in the same way.
 
-## Current Status 
+## 30,000 Feet View
 
-#### September 2016 - the concept is proven
+<p align="center" style="text-align:center">
+<br/>
+<img src="Docs/Images/nwheels-concept.png"/>
+</p>
 
-NWheels has not yet released its platform for general availability.
+_ATTENTION: we are redoing from scratch after successful proof of concept. Features listed here may not yet exist, or be unstable_. 
 
-The proof-of-concept version named **milestone Afra**, is now stable ([see the demo](https://github.com/felix-b/NWheels/wiki/afra-demo-application)), and serves a basis for two proprietary real-world applications.
+## Responsibility segregation 
 
-> Development of two serious software systems, which we did on top of  NWheels milestone Afra framework, evidenced that it is possible to deliver and maintain a superior working product with less resources by an order of magnitude, compared to competing vendors of similar software.
+NWheels:|Application developers:
+---|---
+Implements industrial-strength architectures with full-stack coverage of typical requirements and DevOps/ALM aspects. Subjects covered include information security, business intelligence, testability, multitenancy, scalability, health monitoring with production profiling, fault tolerance, customizability, internationalization, continuous delivery, and more.|Get an automated customizable DevOps workflow, and a production-ready software system right off, which only misses unique features of the application being developed.   
+Provides application developers with full-stack concise programming models, abstracted from concrete technology stacks. Dramatically reduces size of application codebase. Allows writing code clean from underlying technology details. Enforces common conventions throughout the codebase. Allows projects to work both fast and right, starting on day one.|Implement application features in C# on top of NWheels programming models, including UI, business logic, data access, communication endpoints, and more.
+Supplies building blocks for common problem domains, based on field-proven patterns and designs. Such domains include e-commerce, CRM, booking, marketing, accounting, and many more. Flexible vertical and horizontal composability of NWheels domain models enables easy extension and adaptation of building blocks to application requirements.|Whenever possible, reuse domain building blocks; extend and adapt them to application requirements. Save on effort and mistakes. Avoid reinvention of the wheel.
+Supplies pluggable adapters to concrete technology stacks, including databases, provisioning/scalability platforms, messaging middleware, UI technologies, DevOps infrastructure, and many more. Adapters generate implementations of application programming models per underlying technologies. Adapters also include and configure required 3rd-party services in automated deployments (e.g., Redis, MongoDB).|Pick ready technology stacks to plug in, according to application requirements. Save on technology learning curve and technology expert services. Easily afford changes in technology choices.
 
-## Next Step
+# Demo
 
-**Milestone Boda** is now starting with **new greenfield codebase**. 
+NWheels is already capable of bootstrapping a microservice which has business logic and exposes a simple web app, as shown in the figure below. 
 
-Why new codebase:
-- Target .NET Core (milestone Afra targeted .NET Framework 4.5)
-- Fix major deficiencies of milestone Afra:
-  - simplify design, implementation, and exposed APIs
-  - keep technical debt very low
-  - do it TDD way
-- Implement improved architecture, based on lessons learned
-- Let contributors catch up early
+![Demo data flow](Docs/Images/demo-1st-happy-path.png)
 
-See also: [Roadmap](https://github.com/felix-b/NWheels/wiki/background-roadmap)
+_Currently, the demo uses mockup assets for the single-page web app. Planned are pluggable SPA themes and code generation of assets on top of the theme. Implementation code listed below will not be affected by the change._
 
-## Call for Contributors
+## Code
 
-Hi, my name is Felix and I am the inventor of NWheels. My drive to optimize software creation comes from understanding that, as software is going to rule the world, a huge lot of programs will compete for survival. Stable and quick-to-develop will live; unstable or slow-to-develop will die. The ways we create and maintain our software need performance boost and optimization. 
+NWheels-based implementation is about 50 lines of code in C#, all layers included. More details and explanations [can be found here](Docs/Wiki/demo.md).
 
-Such optimization can already be seen in how fundamentally operations management has changed over the past decade. It has shifted towards extreme automation and speed, and this process is going to continue. Take a look at [DC/OS](https://dcos.io/), as a vivid example. Servers and programs are now automatically managed by other programs. In DevOps, the Ops game has changed. 
+#### Program.cs - microservice entry point
+```csharp
+public static int Main(string[] args)                          
+{
+    var microservice = new MicroserviceHostBuilder("hello")  
+        .AutoDiscoverComponents()
+        .UseDefaultWebStack(listenPortNumber: 5000)
+        .Build(); 
 
-Now what about Dev? Will we follow this shift? I believe we will have to. Those who will spend time re-inventing the wheels and coordinating mega-chaos of big concurrent teams, will lose. When it will come to holding a market share, small teams able to quickly assemble ready building blocks together, and add unique features on top, will be the winners. 
+    return microservice.Run(args);
+}
+```
+#### HelloWorldTx.cs - business logic
+```csharp
+[TransactionScriptComponent]
+[SecurityCheck.AllowAnonymous]
+public class HelloWorldTx
+{
+    [TransactionScriptMethod]
+    public async Task<string> Hello(string name)
+    {
+        return $"Hello world, from {name}!";
+    }
+}
+```
+#### HelloWorldApp.cs - web app
+```csharp
+[WebAppComponent]
+public class HelloWorldApp : WebApp<Empty.SessionState>
+{
+    [DefaultPage]
+    public class HomePage : WebPage<Empty.ViewModel>
+    {
+        [ViewModelContract]
+        public class HelloWorldViewModel 
+        {
+            [FieldContract.Required]
+            public string Name;
+            [FieldContract.Semantics.Output, FieldContract.Presentation.Label("WeSay")]
+            public string Message;
+        }
 
-Now we need a platform, which will make it possible.
+        [ContentElement] 
+        [TransactionWizard.Configure(SubmitCommandLabel = "Go")]
+        public TransactionWizard<HelloWorldViewModel> Transaction { get; set; }
 
-**The game of enterprise software development has to change. It's time**.
+        protected override void ImplementController()
+        {
+            Transaction.OnSubmit.Invoke<HelloWorldTx>(
+                tx => tx.Hello(Transaction.Model.Name)
+            ).Then(
+                result => Script.Assign(Transaction.Model.Message, result)
+            );
+        }
+    }
+}
+```
+## Running the demo 
 
-> What will it mean to different people? 
->
-> - To developers - more accomplishments for much less effort, and a platform it's fun to work with
-> - To architects - more ready building blocks and capabilities, more experimentation for less re-work
-> - To software vendors - more competitiveness for less resources, time, and budget
-> - To entrepreneurs - more innovation for less investment and risk, shorter time to market
-> - To businesses - more reliability and availability of critical services for no cloud vendor lock-in
-> - To users - more cool apps and services available
+### System requirements
 
-We know for sure that it is doable, because we did it in milestone Afra. Now we want to do it again, this time for real.  
+- Running on your machine:
+  - Linux, Windows, or macOS machine 
+  - .NET Core SDK 1.1 or later ([download here](https://www.microsoft.com/net/download/core))
 
-The NWheels project would benefit from contributions by experienced professionals in many different areas.
+- Running in Docker (Linux container):
+  ```bash
+  $ docker run --name nwheels-demo -p 5000:5000 -it microsoft/dotnet:1.1-sdk /bin/bash
+  ```
 
-#### Feel like you would want to get involved? **[Guidelines and instructions link will be available soon]()**.
+### Get sources and build
 
-We believe that code sharing and collaboration, driven by enthusiasm for quality and professionalism, have much better chances of delivering working and (re)usable software, compared to isolated development effort driven by sales plan of a profit-oriented organization. 
+  ```bash
+  $ git clone https://github.com/felix-b/NWheels.git nwheels
+  $ cd nwheels/Source/
+  $ dotnet restore
+  $ dotnet build
+  ```
 
-## Feature Highlights
+### Run microservice
 
-NWheels is aimed to exhibit the following characteristics:
+  ```bash
+  $ dotnet NWheels.Samples.FirstHappyPath.HelloService/bin/Debug/netcoreapp1.1/hello.dll
+  ```
+  
+### Open web application
 
-#### A-to-Z response to common demand
+- If running on your machine: 
+  - Browse to [http://localhost:5000](http://localhost:5000)
+- If running in docker container: 
+  - Print container IP address:
+    ```bash
+    $ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' nwheels-demo
+    ```
+  - Browse to http://_container_ip_address_:5000
 
-  - architectural recipes that cover all application layers and tiers: projects are not left to sweat over gluing multiple 3rd-party building blocks together, or re-inventing the wheels
-  - ready answers to common requirements and concerns, ranging from basic features like authorization, to advanced scenarios like elastic scalability
-  - built-in support for DevOps procedures, automation of clouds, and easy integration with application lifecycle management
+# Feature Highlights
 
-#### Get significantly more for doing much less. For example:
+- **Programming languages**: applications are developed in C#, and primarily target cross-plafrorm .NET Core or .NET Standard. Targeting Windows-only .NET Framework is also supported. 
 
-  - scaffold a new application - and have it automatically built, deployed, and monitored on cloud or on premises environments, where the only piece that is missing, is the unique features you are going to develop.
-  - write code of domain model, logic, and conceptual UI - and get whole layers of your system automatically implemented by conventions - including data persistence, CLI, and UI apps bound to the domain model, in-process or through invocations of REST/backend APIs.
-  - use Information Security building block domain - and get user account management, authentication, and common user stories such as  'confirm email' and 'change password', working out of the box.
-  - define access control rules for different user profiles - and have them transparently enforced through all application layers, including access to both operations and data, in both vertical and horizontal slicing.
-  - define semantic logging messages - and get automatic metric collection, thresholds, circuit breakers, and alerts.
+- **Kinds of applications**: 
+  - Multi-tier systems consisting of UI apps, microservices, and databases
+  - API backends and high-throughput low-latency data processing middleware, optionally based on in-memory data/actor grids
+  - B2B integration solutions 
+  - Fat standalone or peer-to-peer UI apps that include business logic
+  - Any combination of the above
 
-#### Proven architectures, approaches, and patterns, for dramatically less effort on your side. To name a few:
+- **Runtime environments**
+  - Servers will run on Linux, Windows, any macOS. Any compatible IaaS/CaaS cloud, hybrid, and on-premises deployments will be supported. 
+  - UI will run as native mobile apps, web single-page apps, desktop apps on Linux/Windows/macOS; UI on top of IVR, SmartTV, and IoT platforms will be supported.
 
-  - hexagonal architecture 
-  - micro-services
-  - domain-driven design
-  - command-line interface over application functions
-  - distributed consensus and service discovery
-  - containerization
+- **Scalability and high availability** 
+  - Scalable, fault-tolerant, containerized, microservice- and lambda-based architectures. 
+  - Elastic scalability and high availability with zero-downtime deployments; cross-zone and cross-cloud-vendor DR environments will be supported for mission-critical systems.
+  
+- **Extensibility**: NWheels is extensible all the way; we welcome contributions by the community
+  - **Technology stack adapters**: adapter modules can be contributed to support wide range of technology stacks
+  - **Domain building blocks**: expertise in problem domains can be shared through contribution of domain building block modules
+  - **Programming models** (for the most advanced): new programming models can be developed to introduce new development concepts and paradigms.
+  - **Modularity all the way**: both NWheels and NWheels-based applications are customizable and extensible through the mechanism of pluggable modules and features. For SaaS and off-the-shelf software products, this means out-of-the-box support for modular licensing and customer-specific solutions.    
 
-#### Innovative approaches
-  - convention over implementation - transparent implementation of abstractions by pipelines of pluggable conventions - an approach, which eliminates majority of repetitive mechanical code from your codebase.
-  - unobtrusive customization - multiple reusable orthogonal adaptations are stacked on top of white-label version. Plugged into customer-specific configurations, the adaptations extend and alter domain model, logic, and conceptual UI, while the white-label version remains unchanged. 
-  - late compilation - model-based components are late-compiled against customized models and concrete technology stacks
-  - building block domains - adaptive and reusable models, logic, and conceptual UI parts for common domains, such as e-commerce, CRM, booking, accounting.
+# More Info
 
-#### Platform at your service
-  - runs on premises and on any cloud with compatible IaaS; no dependency on specific cloud vendor PaaS - no vendor lock-in
-  - communication endpoints, backend APIs, messaging, workflows, rule engines, distributed cache, map/reduce, job scheduling, ... 
-  - elastic on-demand scalability and automatic failover
-  - cloud, hybrid, and on-premise deployments
-  - pluggable automation of underlying platforms, e.g. Docker, DC/OS, cloud vendor APIs
+More info on NWheels can be found in resources listed below: 
 
-#### Ready DevOps/ALM toolchain
-  - automated deployment to dev boxes and test/prod environments on premise, hybrid, and on cloud
-  - runtime health monitoring, metric collection, and tools for production intelligence
-  - continuous deployment and continuous integration with optional developer git flow, personal builds, and gated commits
-  - product and agile process management
-  - all of the above is cross-tracked for maximal visibility and decision support
+- Documentation (WIP) - [TODO: provide link to wiki]()
+- Architecture (WIP) - [TODO: provide link to wiki]()
+- Philosophy behind NWheels (WIP) - [TODO: provide link to wiki]()
+- Examples in Q&A format (WIP) - [TODO: provide link to Stack Overflow]()
+- Working procedures and conventions - see [Contribution Guidelines](CONTRIBUTING.md)
 
-# Resources
+# Getting Involved
 
-- [Project Wiki](https://github.com/felix-b/NWheels/wiki) - comprehensive documentation for contributors and consumers
-- [Mailing List](https://groups.google.com/d/forum/nwheels-project) - at Google Groups; this is where reviews and discussions of new ideas and approaches take place. 
+Excited? We'd like having you onboard!
+
+Community is a vital part of the NWheels project. Here we are building a welcoming and friendly ecosystem for expertise sharing and contribution.
+
+## Where to start
+
+1. Please make yourself familiar with our [Code of Conduct](CODE_OF_CONDUCT.md).
+1. Run the demo (if you haven't already done that)
+1. Carefully read our [Contribution Guidelines](CONTRIBUTING.md).
+   - Follow instructions in the [First-timers section](CONTRIBUTING.md#first-timers-read-here)
+1. Please feel free to communicate your thoughts and reach out for help.
+
+# Current Status
+
+Starting from February 2017, we are developing our second take at NWheels. 
+
+### Current milestone: 02 - Convergence
+
+PRIMARY GOAL: complete gaps in the core concept, and demonstrate productivity boost through short create-and-deploy cycle.
+
+1. Make NWheels consumable through NuGet packages
+1. Make server-side code generation work
+1. Support deployment in a cloud
+
+SECONDARY GOAL: upgrade to .NET Core 2.0 and provide compatibility with the legacy .NET Framework.
+
+1. Target .NET Standard 2.0 and .NET Core 2.0
+1. Allow developing NWheels-based applications on .NET Framework 4.6.1
+
+MILESTONE LINKS
+
+- [Milestone](https://github.com/felix-b/NWheels/milestone/5)
+- [Scrum board](https://github.com/felix-b/NWheels/projects/1)
+- [Issues](https://github.com/felix-b/NWheels/milestones/02%20Convergence)
+
+# History
+
+The first take at NWheels was named _Milestone Afra_. It is now in use by two proprietary real-world applications. Further development was abandoned for high technical debt, few architectural mistakes, and in favor of targeting cross-platform .NET Core.
+
+### Concept proven
+
+Applications built on top of NWheels milestone Afra shown us that the core concept is correct and robust. With that, we learned a lot of lessons, and faced few mistakes in architecture and implementation.
+
+### Timeline
+
+Year|Summary
+-|-
+2013|Started development of [Hapil](https://github.com/felix-b/Hapil) library for code generation, which is an essential part of NWheels concept.
+2014|Hapil library gained enough features. Started development of NWheels milestone Afra. Implemented server bootstrapping and metadata-based composition of domain objects. Added support for data persistence through Entity Framework.
+2015|Development of NWheels milestone Afra continued. Added support for Mongo DB. Started development of model-based UI, and web UI stack based on a Bootstrap theme, AngularJS, and ASP.NET Web API.
+2016|NWheels milestone Afra reached enough maturity to support full-stack development. Two proprietary real-world applications developed on top of NWheels milestone Afra: one released to production, one is in the beta stage. These applications proved that the concept of NWheels works, but taught us a few lessons.
+2017|Further development of NWheels milestone Afra abandoned; started development of second take at NWheels, completely from scratch.
+
